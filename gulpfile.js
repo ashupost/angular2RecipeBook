@@ -33,13 +33,14 @@ gulp.task('build-css', function () {
         .pipe(ext_replace('.css'))
         .pipe(gulp.dest(assetsProd + 'css/'));
 });
-
+/*
+   TS -> JS
+ */
 gulp.task('build-ts', function () {
     return gulp.src(appDev + '**/*.ts')
         .pipe(sourcemaps.init())
         .pipe(typescript(tsProject))
         .pipe(sourcemaps.write())
-        //.pipe(jsuglify())
         .pipe(gulp.dest(appProd));
 });
 
